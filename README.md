@@ -6,7 +6,7 @@ This library could be used to help to tackle BDD approach, it does not do anythi
 
 
 
-```code
+```java
 import java.util.ArrayList;
 import java.util.List;
 
