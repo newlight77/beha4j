@@ -6,8 +6,8 @@ This library could be used to help to tackle BDD approach, it does not do anythi
 
 
 
-```
-`import java.util.ArrayList;
+```code
+import java.util.ArrayList;
 import java.util.List;
 
 import org.assertj.core.api.Assertions;
