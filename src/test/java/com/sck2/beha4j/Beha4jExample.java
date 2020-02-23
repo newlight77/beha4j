@@ -9,7 +9,7 @@ import org.junit.Test;
 public class Beha4jExample {
 
   @Test
-  public void example() {
+  public void example() throws Throwable {
     
     List<String> list = new ArrayList<>();
     List<String> list2 = new ArrayList<>();
@@ -30,7 +30,8 @@ public class Beha4jExample {
     })
     .then("this resulting list has 5 strings", name -> {
       Assertions.assertThat(list).hasSize(5);
-    });
+      Assertions.fail("purposely failing test");
+    }).complete();
 
   }
 
