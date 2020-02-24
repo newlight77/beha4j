@@ -1,8 +1,8 @@
-package com.sck2.beha4j;
+package io.github.newlight77;
 
 import java.util.Optional;
 
-import static com.sck2.beha4j.Results.RESULTS;
+import static io.github.newlight77.Results.RESULTS;
 
 @FunctionalInterface
 public interface Then {
@@ -31,14 +31,13 @@ public interface Then {
             System.out.println(s + " : " + result.outcome());
         });
 
-        Optional<Results.Result> r = RESULTS.results().values().stream()
+        Optional<Results.Result> scenarioResult = RESULTS.results().values().stream()
                 .filter(Results.Result::isFailed)
                 .skip(1).findFirst();
 
-        if (r.isPresent()) {
-            r.get().throwable().printStackTrace();
-            System.out.println(r.get().throwable().getLocalizedMessage());
-            throw r.get().throwable();
+        if (scenarioResult.isPresent()) {
+            System.out.println(scenarioResult.get().throwable().getLocalizedMessage());
+            throw scenarioResult.get().throwable();
         }
     }
 

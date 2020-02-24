@@ -1,4 +1,4 @@
-package com.sck2.beha4j;
+package io.github.newlight77;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

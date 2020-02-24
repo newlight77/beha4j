@@ -1,12 +1,5 @@
-# beha4j
+package io.github.newlight77;
 
-# Purpose
-
-This library could be used to help to tackle BDD approach, it does not do anything special othewise.
-
-
-
-```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,36 +64,3 @@ public class Beha4jExample {
     }
 
 }
-```
-
-The outcome would be :
-
-```java
-Scenario : Failing to merging 2 lists of string : failed
-Given : there is a list with 3 string : passed
-Given : there is a second list with 2 string : passed
-When : the 2 lists are merged : passed
-Then : this resulting list has 5 strings : failed
-
-Expected size:<5> but was:<6> in:
-<["test1", "test2", "test3", "test3", "test4", "test5"]>
-
-
-java.lang.AssertionError: 
-Expected size:<5> but was:<6> in:
-<["test1", "test2", "test3", "test3", "test4", "test5"]>
-
-	at io.github.newlight77.Beha4jExample.lambda$failingTest$7(Beha4jExample.java:60)
-	at io.github.newlight77.When.then(When.java:10)
-	at io.github.newlight77.Beha4jExample.failingTest(Beha4jExample.java:59)
-
-
-Scenario : Failing to merging 2 lists of string : failed
-Given : there is a list with 3 string : passed
-Given : there is a second list with 2 string : passed
-When : the 2 lists are merged : passed
-Then : this resulting list has 5 strings : passed
-Scenario : Successfully merging 2 lists of string : passed
-
-```
-

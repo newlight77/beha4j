@@ -1,6 +1,6 @@
-package com.sck2.beha4j;
+package io.github.newlight77;
 
-import static com.sck2.beha4j.Results.RESULTS;
+import static io.github.newlight77.Results.RESULTS;
 
 @FunctionalInterface
 public interface Given {
