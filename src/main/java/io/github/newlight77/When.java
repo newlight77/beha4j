@@ -15,5 +15,5 @@ public interface When {
     return then;
   }
 
-  public void execute(String name);
+  void execute(String name);
 }

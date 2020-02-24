@@ -27,5 +27,5 @@ public interface Given {
         return when;
     }
 
-    public void execute(String name);
+    void execute(String name);
 }

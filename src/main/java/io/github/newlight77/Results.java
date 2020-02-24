@@ -2,6 +2,7 @@ package io.github.newlight77;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public enum Results {
     RESULTS;
@@ -10,6 +11,21 @@ public enum Results {
 
     public Map<String, Result> results() {
         return results.get();
+    }
+
+    public void print(Printer printer) throws Throwable {
+        results().forEach((s, result) -> {
+            printer.print(s + " : " + result.outcome());
+        });
+
+        Optional<Result> scenarioResult = results().values().stream()
+                .filter(Results.Result::isFailed)
+                .skip(1).findFirst();
+
+        if (scenarioResult.isPresent()) {
+            printer.print(scenarioResult.get().throwable().getLocalizedMessage());
+            throw scenarioResult.get().throwable();
+        }
     }
 
     public void failScenario(String name, Throwable e) {

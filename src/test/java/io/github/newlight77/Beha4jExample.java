@@ -31,7 +31,7 @@ public class Beha4jExample {
             .then("this resulting list has 5 strings", name -> {
                 Assertions.assertThat(list).hasSize(5);
             })
-            .complete();
+            .complete(Printer::printConsole);
 
     }
 
@@ -59,7 +59,7 @@ public class Beha4jExample {
             .then("this resulting list has 5 strings", name -> {
                 Assertions.assertThat(list).hasSize(5);
             })
-            .complete();
+            .complete(Printer::printConsole);
 
     }
 
